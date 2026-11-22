@@ -208,36 +208,36 @@
 
         .puzzle-box {
             background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255, 240, 245, 0.95));
-            padding: 14px;
+            padding: 15px;
             border-radius: 25px;
             text-align: center;
             width: 100%;
-            max-width: 310px;
+            max-width: 330px;
             box-shadow: 0 15px 40px rgba(216, 27, 96, 0.25);
             border: 4px solid #ff69b4;
         }
 
         .puzzle-box h2 {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             color: #d81b60;
             margin-bottom: 3px;
         }
 
         .puzzle-box p {
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             color: #c71585;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
-        /* กริดจิ๊กซอว์สัดส่วน 9:16 (270x480) */
+        /* กริดจิ๊กซอว์สัดส่วน 4:5 (288x360) */
         .puzzle-grid {
             display: grid;
-            grid-template-columns: repeat(3, 86px);
-            grid-template-rows: repeat(3, 154px);
+            grid-template-columns: repeat(3, 92px);
+            grid-template-rows: repeat(3, 116px);
             gap: 2px;
-            width: 270px;
-            height: 480px;
-            margin: 0 auto 8px auto;
+            width: 288px;
+            height: 360px;
+            margin: 0 auto 10px auto;
             background: rgba(255, 182, 193, 0.4);
             padding: 4px;
             border-radius: 14px;
@@ -245,10 +245,10 @@
         }
 
         .puzzle-piece {
-            width: 86px;
-            height: 154px;
+            width: 92px;
+            height: 116px;
             background-image: url('photo1.jpg');
-            background-size: 258px 462px;
+            background-size: 276px 348px;
             cursor: grab;
             border-radius: 6px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.15);
@@ -278,15 +278,15 @@
             box-shadow: inset 0 0 15px #ff1493;
         }
 
-        /* ภาพตอนต่อเสร็จสัดส่วน 9:16 (270x480) */
+        /* ภาพตอนต่อเสร็จสัดส่วน 4:5 (288x360) */
         .completed-preview {
-            width: 270px;
-            height: 480px;
+            width: 288px;
+            height: 360px;
             background-image: url('photo1.jpg');
             background-size: 100% 100%;
             background-position: center;
             border-radius: 14px;
-            margin: 0 auto 8px auto;
+            margin: 0 auto 10px auto;
             border: 3px solid #ff69b4;
             box-shadow: 0 8px 25px rgba(216, 27, 96, 0.4);
             display: none;
@@ -558,8 +558,8 @@
             const grid = document.getElementById('puzzleGrid');
             grid.innerHTML = '';
 
-            const pieceWidth = 86;
-            const pieceHeight = 154;
+            const pieceWidth = 92;
+            const pieceHeight = 116;
 
             currentOrder.forEach((pieceIndex, currentIndex) => {
                 const piece = document.createElement('div');
