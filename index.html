@@ -208,35 +208,36 @@
 
         .puzzle-box {
             background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255, 240, 245, 0.95));
-            padding: 15px;
+            padding: 14px;
             border-radius: 25px;
             text-align: center;
             width: 100%;
-            max-width: 340px;
+            max-width: 310px;
             box-shadow: 0 15px 40px rgba(216, 27, 96, 0.25);
             border: 4px solid #ff69b4;
         }
 
         .puzzle-box h2 {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: #d81b60;
             margin-bottom: 3px;
         }
 
         .puzzle-box p {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: #c71585;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
+        /* กริดจิ๊กซอว์สัดส่วน 9:16 (270x480) */
         .puzzle-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 86px);
+            grid-template-rows: repeat(3, 154px);
             gap: 2px;
             width: 270px;
             height: 480px;
-            margin: 0 auto 10px auto;
+            margin: 0 auto 8px auto;
             background: rgba(255, 182, 193, 0.4);
             padding: 4px;
             border-radius: 14px;
@@ -244,10 +245,10 @@
         }
 
         .puzzle-piece {
-            width: 88px;
-            height: 158px;
+            width: 86px;
+            height: 154px;
             background-image: url('photo1.jpg');
-            background-size: 264px 474px;
+            background-size: 258px 462px;
             cursor: grab;
             border-radius: 6px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.15);
@@ -277,14 +278,15 @@
             box-shadow: inset 0 0 15px #ff1493;
         }
 
+        /* ภาพตอนต่อเสร็จสัดส่วน 9:16 (270x480) */
         .completed-preview {
             width: 270px;
             height: 480px;
             background-image: url('photo1.jpg');
-            background-size: cover;
+            background-size: 100% 100%;
             background-position: center;
             border-radius: 14px;
-            margin: 0 auto 10px auto;
+            margin: 0 auto 8px auto;
             border: 3px solid #ff69b4;
             box-shadow: 0 8px 25px rgba(216, 27, 96, 0.4);
             display: none;
@@ -556,13 +558,16 @@
             const grid = document.getElementById('puzzleGrid');
             grid.innerHTML = '';
 
+            const pieceWidth = 86;
+            const pieceHeight = 154;
+
             currentOrder.forEach((pieceIndex, currentIndex) => {
                 const piece = document.createElement('div');
                 piece.classList.add('puzzle-piece');
                 piece.setAttribute('draggable', 'true');
                 
-                const x = (pieceIndex % 3) * 88;
-                const y = Math.floor(pieceIndex / 3) * 158;
+                const x = (pieceIndex % 3) * pieceWidth;
+                const y = Math.floor(pieceIndex / 3) * pieceHeight;
                 piece.style.backgroundPosition = `-${x}px -${y}px`;
                 piece.dataset.index = currentIndex;
 
